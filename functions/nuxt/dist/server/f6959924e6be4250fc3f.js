@@ -1,0 +1,2 @@
+exports.ids=[1],exports.modules={16:function(t,e,n){"use strict";n.r(e);var r=n(15),c=n.n(r),o={asyncData:async()=>({facts:(await c.a.get("https://nuxt-ssr.firebaseio.com/facts.json")).data})},f=n(1);var component=Object(f.a)(o,function(){var t=this,e=t.$createElement;return(t._self._c||e)("ul",[t._ssrNode(t._ssrList(t.facts,function(e,n){return"<li>"+t._ssrEscape("\n    "+t._s(e.text)+"\n  ")+"</li>"}))])},[],!1,function(t){},null,"7a87c51a");e.default=component.exports}};
+//# sourceMappingURL=f6959924e6be4250fc3f.js.map
