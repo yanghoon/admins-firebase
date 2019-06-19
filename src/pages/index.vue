@@ -1,19 +1,27 @@
 <template>
   <div>
-    <div class="card flex items-center" v-for="(fact, factIdx) in facts" :key="factIdx">
-      <div class="">
-        <img class="arvitor" src="favicon.ico" alt="ChitChat Logo">
-      </div>
-      <div class="message">
-        <h4 class="title">{{ factIdx }}</h4>
-        <p class="text">{{ fact.text }}</p>
-      </div>
+    <div class="product flex items-center"
+          v-for="(order, idx) in orders.content.resources" :key="idx">
+      <span class="status">
+        {{ toLabels(order.orderType) }} {{ toLabels(order.orderStatus) }}
+      </span>
+      <span class="user">{{ order.orderCustomerId }}</span>
+      <span class="name">{{ order.productPackageName }}</span>
+      <p class="info">- {{ `#${order.id}` }}</p>
     </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+
+let labels = {
+  'PURCHASE': '구매',
+  'DISPOSAL': '취소',
+  'REQUESTED': '요청',
+  'PROCEEDING': '진행중',
+  'DONE': '완료'
+}
 
 export default {
   // async asyncData() {
@@ -23,20 +31,28 @@ export default {
   // }
   data () {
     return {
-      facts: []
+      orders: {content: {}}
+    }
+  },
+  methods: {
+    toLabels (val) {
+      return labels[val]
     }
   },
   mounted () {
-    axios.get('https://nuxt-ssr.firebaseio.com/facts.json')
-      .then(res => this.facts = res.data)
+    axios.get('/orders.json')
+      .then(res => this.orders = res.data)
   }
 }
 </script>
 
 <style>
-.card { @apply max-w-sm mx-auto p-6 mb-2 bg-white rounded-lg shadow-xl }
-.card .arvitor { @apply object-contain object-center w-6 }
-.card .message { @apply ml-6 pt-1 }
-.card .message .title { @apply text-lg text-gray-900 leading-tight }
-.card .message .text { @apply text-base text-gray-600 leading-normal }
+.product {
+  @apply w-9/12 mx-auto p-3 bg-white
+  /* @apply ml-6 pt-1 */
+}
+.product .status { @apply text-sm text-gray-900 mr-5 }
+.product .user { @apply text-sm text-gray-900 mr-10 }
+.product .name { @apply text-sm text-gray-900 mr-1 }
+.product .info { @apply text-xs text-gray-600 leading-normal }
 </style>

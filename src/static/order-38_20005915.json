@@ -1,0 +1,54 @@
+{
+  "regId": "zservice",
+  "regDate": "2019-06-12 09:52:21",
+  "modId": null,
+  "modDate": null,
+  "id": 38,
+  "orderId": 20005915,
+  "orderType": "PURCHASE",
+  "orderStatus": "REQUESTED",
+  "orderUserId": "zservice",
+  "orderCustomerId": "C001139",
+  "orderProduct": {
+    "regId": "zservice",
+    "regDate": "2019-06-12 09:52:21",
+    "id": 38,
+    "productId": 27,
+    "productName": "Cloud Z CP (Container Platform)",
+    "productShortName": "Cloud Z CP",
+    "productPackageId": "SK000323",
+    "productPackageName": "Cloud Z CP Public - Support Plan",
+    "orderMeta": {
+      "regId": "zservice",
+      "regDate": "2019-06-12 09:52:21",
+      "modId": null,
+      "modDate": null,
+      "id": 38
+    },
+    "orderPackageCategories": [
+      {
+        "regId": "zservice",
+        "regDate": "2019-06-12 09:52:21",
+        "id": 103,
+        "categoryName": "Plan",
+        "categoryCode": "PC001170",
+        "isMandatory": true,
+        "meteringType": "USAGE",
+        "billingCycle": "MONTHLY",
+        "itemId": 1480,
+        "itemName": "Premium",
+        "itemPrice": 0
+      }
+    ],
+    "orderClusters": []
+  },
+  "orderStatusLogs": [
+    {
+      "regId": "zservice",
+      "regDate": "2019-06-12 09:52:21",
+      "id": 58,
+      "orderStatus": "REQUESTED",
+      "approvalDescription": null
+    }
+  ]
+}

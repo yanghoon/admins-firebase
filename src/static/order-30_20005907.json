@@ -1,0 +1,132 @@
+{
+  "regId": "zservice",
+  "regDate": "2019-06-12 09:47:48",
+  "modId": null,
+  "modDate": null,
+  "id": 30,
+  "orderId": 20005907,
+  "orderType": "PURCHASE",
+  "orderStatus": "REQUESTED",
+  "orderUserId": "zservice",
+  "orderCustomerId": "C001139",
+  "orderProduct": {
+    "regId": "zservice",
+    "regDate": "2019-06-12 09:47:48",
+    "id": 30,
+    "productId": 27,
+    "productName": "Cloud Z CP (Container Platform)",
+    "productShortName": "Cloud Z CP",
+    "productPackageId": "SK000316",
+    "productPackageName": "Cloud Z CP Public - Standard",
+    "orderMeta": {
+      "regId": "zservice",
+      "regDate": "2019-06-12 09:47:48",
+      "modId": null,
+      "modDate": null,
+      "id": 30
+    },
+    "orderPackageCategories": [
+      {
+        "regId": "zservice",
+        "regDate": "2019-06-12 09:47:48",
+        "id": 84,
+        "categoryName": "SLA",
+        "categoryCode": "PC001128",
+        "isMandatory": true,
+        "meteringType": "MONTHLY",
+        "billingCycle": "MONTHLY",
+        "itemId": 1388,
+        "itemName": "99.7%",
+        "itemPrice": 150000
+      },
+      {
+        "regId": "zservice",
+        "regDate": "2019-06-12 09:47:48",
+        "id": 85,
+        "categoryName": "관리 콘솔",
+        "categoryCode": "PC001130",
+        "isMandatory": true,
+        "meteringType": "MONTHLY",
+        "billingCycle": "MONTHLY",
+        "itemId": 1389,
+        "itemName": "관리 콘솔",
+        "itemPrice": 0
+      },
+      {
+        "regId": "zservice",
+        "regDate": "2019-06-12 09:47:48",
+        "id": 86,
+        "categoryName": "모니터링",
+        "categoryCode": "PC001132",
+        "isMandatory": true,
+        "meteringType": "MONTHLY",
+        "billingCycle": "MONTHLY",
+        "itemId": 1390,
+        "itemName": "50GB",
+        "itemPrice": 0
+      },
+      {
+        "regId": "zservice",
+        "regDate": "2019-06-12 09:47:48",
+        "id": 87,
+        "categoryName": "CI/CD",
+        "categoryCode": "PC001134",
+        "isMandatory": true,
+        "meteringType": "MONTHLY",
+        "billingCycle": "MONTHLY",
+        "itemId": 1391,
+        "itemName": "50GB",
+        "itemPrice": 0
+      },
+      {
+        "regId": "zservice",
+        "regDate": "2019-06-12 09:47:48",
+        "id": 88,
+        "categoryName": "SCMS",
+        "categoryCode": "PC001136",
+        "isMandatory": true,
+        "meteringType": "MONTHLY",
+        "billingCycle": "MONTHLY",
+        "itemId": 1392,
+        "itemName": "20GB",
+        "itemPrice": 0
+      },
+      {
+        "regId": "zservice",
+        "regDate": "2019-06-12 09:47:48",
+        "id": 89,
+        "categoryName": "Image Registry",
+        "categoryCode": "PC001138",
+        "isMandatory": true,
+        "meteringType": "MONTHLY",
+        "billingCycle": "MONTHLY",
+        "itemId": 1393,
+        "itemName": "50GB",
+        "itemPrice": 0
+      },
+      {
+        "regId": "zservice",
+        "regDate": "2019-06-12 09:47:48",
+        "id": 90,
+        "categoryName": "Catalog",
+        "categoryCode": "PC001140",
+        "isMandatory": true,
+        "meteringType": "MONTHLY",
+        "billingCycle": "MONTHLY",
+        "itemId": 1394,
+        "itemName": "Catalog",
+        "itemPrice": 0
+      }
+    ],
+    "orderClusters": []
+  },
+  "orderStatusLogs": [
+    {
+      "regId": "zservice",
+      "regDate": "2019-06-12 09:47:48",
+      "id": 50,
+      "orderStatus": "REQUESTED",
+      "approvalDescription": null
+    }
+  ]
+}

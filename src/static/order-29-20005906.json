@@ -1,0 +1,54 @@
+{
+  "regId": "zservice",
+  "regDate": "2019-06-12 09:43:38",
+  "modId": null,
+  "modDate": null,
+  "id": 29,
+  "orderId": 20005906,
+  "orderType": "PURCHASE",
+  "orderStatus": "REQUESTED",
+  "orderUserId": "zservice",
+  "orderCustomerId": "C001139",
+  "orderProduct": {
+    "regId": "zservice",
+    "regDate": "2019-06-12 09:43:38",
+    "id": 29,
+    "productId": 27,
+    "productName": "Cloud Z CP (Container Platform)",
+    "productShortName": "Cloud Z CP",
+    "productPackageId": "SK000247",
+    "productPackageName": "Cloud Z CP Private - License",
+    "orderMeta": {
+      "regId": "zservice",
+      "regDate": "2019-06-12 09:43:38",
+      "modId": null,
+      "modDate": null,
+      "id": 29
+    },
+    "orderPackageCategories": [
+      {
+        "regId": "zservice",
+        "regDate": "2019-06-12 09:43:38",
+        "id": 83,
+        "categoryName": "Platform License (core)",
+        "categoryCode": "PC000965",
+        "isMandatory": true,
+        "meteringType": "MONTHLY",
+        "billingCycle": "MONTHLY",
+        "itemId": 1265,
+        "itemName": "Platform License - 1 Core",
+        "itemPrice": 11560000
+      }
+    ],
+    "orderClusters": []
+  },
+  "orderStatusLogs": [
+    {
+      "regId": "zservice",
+      "regDate": "2019-06-12 09:43:38",
+      "id": 49,
+      "orderStatus": "REQUESTED",
+      "approvalDescription": null
+    }
+  ]
+}

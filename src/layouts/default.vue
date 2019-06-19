@@ -6,7 +6,7 @@
 
 <style>
 .container {
-  @apply h-screen py-10 bg-gray-600
+  @apply h-screen py-10 bg-gray-400
 }
 </style>
 
