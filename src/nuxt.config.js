@@ -18,10 +18,15 @@ module.exports = {
   /*
    ** Build configuration
    */
+  css: ['~/assets/css/tailwind.css'],
   build: {
     publicPath: process.env.NUXT_PUBLIC_PATH || "/assets",
     vendor: ["axios", "babel-polyfill"],
     extractCSS: true,
+    postcss: [
+      require('tailwindcss')('./tailwind.config.js'),
+      require('autoprefixer')
+    ],
     /*
      ** Run ESLint on save
      */
