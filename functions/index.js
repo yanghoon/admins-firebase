@@ -14,8 +14,8 @@ const app = express();
 
 const config = {
   dev: false,
-  buildDir: "nuxt"
-  // build: { publicPath: "/" }
+  buildDir: "nuxt",
+  build: { publicPath: process.env.NUXT_PUBLIC_PATH || "/assets" }
 };
 const nuxt = new Nuxt(config);
 

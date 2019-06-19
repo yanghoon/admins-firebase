@@ -19,7 +19,7 @@ module.exports = {
    ** Build configuration
    */
   build: {
-    publicPath: "/",
+    publicPath: process.env.NUXT_PUBLIC_PATH || "/assets",
     vendor: ["axios", "babel-polyfill"],
     extractCSS: true,
     /*
@@ -47,7 +47,6 @@ module.exports = {
         }
       ]
     ]
-  },
-  buildDir: '../functions/nuxt'
+  }
 };
 
