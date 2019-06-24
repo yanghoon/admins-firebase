@@ -1,0 +1,54 @@
+{
+  "regId": "zservice",
+  "regDate": "2019-06-12 09:51:17",
+  "modId": null,
+  "modDate": null,
+  "id": 35,
+  "orderId": 20005912,
+  "orderType": "PURCHASE",
+  "orderStatus": "REQUESTED",
+  "orderUserId": "zservice",
+  "orderCustomerId": "C001139",
+  "orderProduct": {
+    "regId": "zservice",
+    "regDate": "2019-06-12 09:51:17",
+    "id": 35,
+    "productId": 27,
+    "productName": "Cloud Z CP (Container Platform)",
+    "productShortName": "Cloud Z CP",
+    "productPackageId": "SK000320",
+    "productPackageName": "Cloud Z CP Public - Network Proxy",
+    "orderMeta": {
+      "regId": "zservice",
+      "regDate": "2019-06-12 09:51:17",
+      "modId": null,
+      "modDate": null,
+      "id": 35
+    },
+    "orderPackageCategories": [
+      {
+        "regId": "zservice",
+        "regDate": "2019-06-12 09:51:17",
+        "id": 100,
+        "categoryName": "사양",
+        "categoryCode": "PC001159",
+        "isMandatory": true,
+        "meteringType": "MONTHLY",
+        "billingCycle": "MONTHLY",
+        "itemId": 1426,
+        "itemName": "2Core x 4GB x 2 Nodes",
+        "itemPrice": 400000
+      }
+    ],
+    "orderClusters": []
+  },
+  "orderStatusLogs": [
+    {
+      "regId": "zservice",
+      "regDate": "2019-06-12 09:51:17",
+      "id": 55,
+      "orderStatus": "REQUESTED",
+      "approvalDescription": null
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "regId": "zservice",
+  "regDate": "2019-06-12 09:49:09",
+  "modId": null,
+  "modDate": null,
+  "id": 31,
+  "orderId": 20005908,
+  "orderType": "PURCHASE",
+  "orderStatus": "REQUESTED",
+  "orderUserId": "zservice",
+  "orderCustomerId": "C001139",
+  "orderProduct": {
+    "regId": "zservice",
+    "regDate": "2019-06-12 09:49:09",
+    "id": 31,
+    "productId": 27,
+    "productName": "Cloud Z CP (Container Platform)",
+    "productShortName": "Cloud Z CP",
+    "productPackageId": "SK000317",
+    "productPackageName": "Cloud Z CP Public - Add-on Extended Storage",
+    "orderMeta": {
+      "regId": "zservice",
+      "regDate": "2019-06-12 09:49:09",
+      "modId": null,
+      "modDate": null,
+      "id": 31
+    },
+    "orderPackageCategories": [
+      {
+        "regId": "zservice",
+        "regDate": "2019-06-12 09:49:09",
+        "id": 91,
+        "categoryName": "모니터링 스토리지",
+        "categoryCode": "PC001142",
+        "isMandatory": true,
+        "meteringType": "MONTHLY",
+        "billingCycle": "MONTHLY",
+        "itemId": 1397,
+        "itemName": "500GB",
+        "itemPrice": 237000
+      },
+      {
+        "regId": "zservice",
+        "regDate": "2019-06-12 09:49:09",
+        "id": 92,
+        "categoryName": "CI/CD 스토리지",
+        "categoryCode": "PC001144",
+        "isMandatory": false,
+        "meteringType": "MONTHLY",
+        "billingCycle": "MONTHLY",
+        "itemId": 1400,
+        "itemName": "300GB",
+        "itemPrice": 128000
+      },
+      {
+        "regId": "zservice",
+        "regDate": "2019-06-12 09:49:09",
+        "id": 93,
+        "categoryName": "SCMS 스토리지",
+        "categoryCode": "PC001146",
+        "isMandatory": false,
+        "meteringType": "MONTHLY",
+        "billingCycle": "MONTHLY",
+        "itemId": 1405,
+        "itemName": "300GB",
+        "itemPrice": 128000
+      },
+      {
+        "regId": "zservice",
+        "regDate": "2019-06-12 09:49:09",
+        "id": 94,
+        "categoryName": "Image Registry",
+        "categoryCode": "PC001148",
+        "isMandatory": false,
+        "meteringType": "MONTHLY",
+        "billingCycle": "MONTHLY",
+        "itemId": 1407,
+        "itemName": "300GB",
+        "itemPrice": 128000
+      }
+    ],
+    "orderClusters": []
+  },
+  "orderStatusLogs": [
+    {
+      "regId": "zservice",
+      "regDate": "2019-06-12 09:49:09",
+      "id": 51,
+      "orderStatus": "REQUESTED",
+      "approvalDescription": null
+    }
+  ]
+}

@@ -1,3 +1,7 @@
+/*
+ * - https://ko.nuxtjs.org/guide/plugins/
+ * - https://github.com/brockpetrie/vue-moment/blob/master/vue-moment.js
+ */
 import Vue from 'vue'
 
 const VueMoment = {

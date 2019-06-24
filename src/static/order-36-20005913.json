@@ -1,0 +1,54 @@
+{
+  "regId": "zservice",
+  "regDate": "2019-06-12 09:51:54",
+  "modId": null,
+  "modDate": null,
+  "id": 36,
+  "orderId": 20005913,
+  "orderType": "PURCHASE",
+  "orderStatus": "REQUESTED",
+  "orderUserId": "zservice",
+  "orderCustomerId": "C001139",
+  "orderProduct": {
+    "regId": "zservice",
+    "regDate": "2019-06-12 09:51:54",
+    "id": 36,
+    "productId": 27,
+    "productName": "Cloud Z CP (Container Platform)",
+    "productShortName": "Cloud Z CP",
+    "productPackageId": "SK000321",
+    "productPackageName": "Cloud Z CP Public - Technical Support",
+    "orderMeta": {
+      "regId": "zservice",
+      "regDate": "2019-06-12 09:51:54",
+      "modId": null,
+      "modDate": null,
+      "id": 36
+    },
+    "orderPackageCategories": [
+      {
+        "regId": "zservice",
+        "regDate": "2019-06-12 09:51:54",
+        "id": 101,
+        "categoryName": "Technical Support",
+        "categoryCode": "PC001161",
+        "isMandatory": true,
+        "meteringType": null,
+        "billingCycle": "ONE_TIME",
+        "itemId": 1428,
+        "itemName": "4시간 기술지원 서비스",
+        "itemPrice": 300000
+      }
+    ],
+    "orderClusters": []
+  },
+  "orderStatusLogs": [
+    {
+      "regId": "zservice",
+      "regDate": "2019-06-12 09:51:54",
+      "id": 56,
+      "orderStatus": "REQUESTED",
+      "approvalDescription": null
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "regId": "zservice",
+  "regDate": "2019-06-12 09:50:35",
+  "modId": null,
+  "modDate": null,
+  "id": 33,
+  "orderId": 20005910,
+  "orderType": "PURCHASE",
+  "orderStatus": "REQUESTED",
+  "orderUserId": "zservice",
+  "orderCustomerId": "C001139",
+  "orderProduct": {
+    "regId": "zservice",
+    "regDate": "2019-06-12 09:50:35",
+    "id": 33,
+    "productId": 27,
+    "productName": "Cloud Z CP (Container Platform)",
+    "productShortName": "Cloud Z CP",
+    "productPackageId": "SK000318",
+    "productPackageName": "Cloud Z CP Public - Logging (Lite)",
+    "orderMeta": {
+      "regId": "zservice",
+      "regDate": "2019-06-12 09:50:35",
+      "modId": null,
+      "modDate": null,
+      "id": 33
+    },
+    "orderPackageCategories": [
+      {
+        "regId": "zservice",
+        "regDate": "2019-06-12 09:50:35",
+        "id": 97,
+        "categoryName": "Elasticsearch Cluster",
+        "categoryCode": "PC001150",
+        "isMandatory": true,
+        "meteringType": "MONTHLY",
+        "billingCycle": "MONTHLY",
+        "itemId": 1409,
+        "itemName": "Single Node Cluster",
+        "itemPrice": 290000
+      },
+      {
+        "regId": "zservice",
+        "regDate": "2019-06-12 09:50:35",
+        "id": 98,
+        "categoryName": "Storage",
+        "categoryCode": "PC001153",
+        "isMandatory": true,
+        "meteringType": "MONTHLY",
+        "billingCycle": "MONTHLY",
+        "itemId": 1419,
+        "itemName": "4TB",
+        "itemPrice": 1420000
+      }
+    ],
+    "orderClusters": []
+  },
+  "orderStatusLogs": [
+    {
+      "regId": "zservice",
+      "regDate": "2019-06-12 09:50:35",
+      "id": 53,
+      "orderStatus": "REQUESTED",
+      "approvalDescription": null
+    }
+  ]
+}
