@@ -1,6 +1,19 @@
 # Overview
 [Live Demo](https://admins-c7f0d.firebaseapp.com/)
 
+# Test
+```bash
+## Local
+$ cd src
+$ yarn dev   # yarn build  (production)
+             # yarn start
+
+## Firebase
+$ cd ..      # git home
+$ bash fb-serve.sh
+$ bash fb-deploy.sh   # firebase deploy
+```
+
 # Setup
 ## Node
 clean node (on Mac): https://gomugom.github.io/how-to-remove-node-from-macos/
