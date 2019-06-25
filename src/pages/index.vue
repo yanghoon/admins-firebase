@@ -22,8 +22,12 @@
             <i class="material-icons">filter_list</i>
           </span>
           <!-- https://tailwindcomponents.com/component/dropdown -->
-          <ul v-if="flag.menu == 'filter'" class="menu" @click.stop="">
-            <li>
+          <div class="menu row p-4" v-if="flag.menu == 'filter'" @click.stop="">
+            <div class="mr-5">
+              <div class="item category">
+                <span>주문 상태</span>
+              </div>
+
               <label class="item">
                 <input class="leading-tight" type="checkbox" value='PURCHASE' v-model="filter.type">
                 <span class=""> {{ 'PURCHASE' | labels('ORDER') }} </span>
@@ -32,9 +36,8 @@
                 <input class="leading-tight" type="checkbox" value='DISPOSAL' v-model="filter.type">
                 <span class=""> {{ 'DISPOSAL' | labels('ORDER') }} </span>
               </label>
-            </li>
-            <li><hr class="divider"></li>
-            <li>
+
+              <hr class="divider clear">
               <label class="item">
                 <input class="leading-tight" type="checkbox" value='REQUESTED' v-model="filter.status">
                 <span class=""> {{ 'REQUESTED' | labels('ORDER') }} </span>
@@ -47,15 +50,44 @@
                 <input class="leading-tight" type="checkbox" value='DONE' v-model="filter.status">
                 <span class=""> {{ 'DONE' | labels('ORDER') }} </span>
               </label>
-            </li>
-            <li><hr class="divider"></li>
-            <li>
+              <label class="item">
+                <input class="leading-tight" type="checkbox" value='DINIED' v-model="filter.status">
+                <span class=""> {{ 'DINIED' | labels('ORDER') }} </span>
+              </label>
+
+              <hr class="divider clear">
               <label class="item">
                 <input class="leading-tight" type="checkbox">
                 <span class="">전체</span>
               </label>
-            </li>
-          </ul>
+            </div>
+
+            <div class="">
+              <div class="item category">
+                <span>정렬 기준</span>
+              </div>
+
+              <hr class="divider clear">
+              <label class="item">
+                <input class="leading-tight" type="checkbox" v-model="filter.order.recent">
+                <span>최근</span>
+              </label>
+
+              <hr class="divider clear">
+              <label class="item">
+                <input class="leading-tight" type="checkbox" value='product-name'>
+                <span class="line-through">상품명</span>
+                검색으로 대체
+              </label>
+
+              <hr class="divider clear">
+              <label class="item">
+                <input class="leading-tight" type="checkbox" value='user-name'>
+                <span class="line-through">고객명</span>
+                검색으로 대체
+              </label>
+            </div>
+          </div>
         </div>
 
         <span class="btn">
@@ -66,16 +98,12 @@
           <span class="btn" @click.stop="flag.menu = 'more'">
             <i class="material-icons">more_vert</i>
           </span>
-          <ul v-if="flag.menu == 'more'" class="menu" @click.stop="">
-            <li>
-              <label>
-                <input class="leading-tight" type="checkbox">
-                <span class=""> {{ 'PURCHASE' | labels('ORDER') }} </span>
-              </label>
-              <label>
-                <input class="leading-tight" type="checkbox">
-                <span class=""> {{ 'DISPOSAL' | labels('ORDER') }} </span>
-              </label>
+          <ul v-if="flag.menu == 'more'" class="menu wide py-2" @click.stop="">
+            <li class="item">
+              <span>
+                <i class="material-icons">add</i>
+                주문 추가
+              </span>
             </li>
           </ul>
         </div>
@@ -99,27 +127,44 @@
 
     <ul class="tab">
       <li class="active">
-        <span>Cloud Z CP</span>
-        <span class="badge">{{ badges[0] }}</span>
+        <span class="mw-10">Cloud Z CP</span>
+        <span class="badge bg-red-600 ml-2">{{ badges[0] }}</span>
       </li>
       <li>
         <span>Cloud Z DB</span>
-        <span class="badge">{{ badges[1] }}</span>
+        <span class="badge bg-red-600 ml-2">{{ badges[1] }}</span>
       </li>
     </ul>
 
     <table class="product-table tx-primary">
       <tbody>
+        <tr v-if="$_.size(orders.content.resources) == 0">
+          <td class="bg-gray-300 text-gray-500 text-lg flex justify-center">
+            <div class="text-center py-4" v-if="badges[0] == 0">
+              <div><i class="material-icons text-5xl">thumb_up</i></div>
+              모든 주문을 완료했습니다
+            </div>
+            <div class="text-center py-4" v-else>
+              <div><i class="material-icons text-6xl">error_outline</i></div>
+              일치하는 주문 목록이 없습니다
+            </div>
+          </td>
+        </tr>
+
         <tr v-for="(order, idx) in orders.content.resources" :key="idx"
             :class="{disabled: order.orderStatus == 'DONE'}">
           <td class="status clickable" @click.stop="showDialog($event, 'dialog-' + idx, order)">
             {{ order.orderType | labels('ORDER') }} {{ order.orderStatus | labels('ORDER') }}
+            <i class="material-icons">keyboard_arrow_down</i>
 
-            <ul v-if="flag.menu == 'dialog-' + idx" class="menu" @click.stop="">
-              <template class="item" v-for="(status, idx) in ['REQUESTED', 'PROCEEDING', 'DONE']">
-                <li class="item" v-if="order.orderStatus != status" :key="idx">
-                  <!-- <span class=""> {{ order.orderType | labels('ORDER') }} {{ status | labels('ORDER') }} </span> -->
-                  <span class="">{{ status | labels('ORDER') }}</span>
+            <ul v-if="flag.menu == 'dialog-' + idx" class="menu wide" @click.stop="">
+              <template v-for="(status, idx) in options4Status(order.orderStatus)">
+                <li class="item"
+                    v-if="order.orderStatus != status" :key="idx"
+                    @click="updateStatus(order)">
+                  <span class="">
+                    {{ status | labels('ORDER') }}
+                  </span>
                 </li>
               </template>
             </ul>
@@ -131,13 +176,14 @@
 
           <td class="title clickable" @click.stop="showOrderDtail('dialog-2-' + idx, order)">
             <span class="">{{ order.productPackageName }}</span>
+            <div class="badge bg-yellow-500" v-if="!order.clusterName">!</div>
             -
             <span class="tx-second">{{ `#${order.orderId}` }}</span>
 
             <div v-if="flag.menu == 'dialog-2-' + idx" class="dialog" @click.stop="">
               <div class="action">
                 <span class="btn" @click="flag.menu = ''">
-                  <i class="material-icons">share</i>
+                  <i class="material-icons">open_in_new</i>
                 </span>
                 <span class="btn" @click="flag.menu = ''">
                   <i class="material-icons">close</i>
@@ -149,10 +195,18 @@
 
               <div class="h-2">&nbsp;</div>
               <div class="edit">
-                <div class="tx-color-second">Cluster</div>
+                <div>
+                  <span class="tx-color-second">Cluster</span>
+                 <div class="badge bg-yellow-500" v-if="!orderSpec.orderProduct.orderClusters[0]">!</div>
+                </div>
                 <div v-if="orderSpec.orderProduct.orderClusters[0]">
-                  {{ orderSpec.orderProduct.orderClusters[0].name }}
-                  <span class="btn tx-color-second" @click="orderSpec.orderProduct.orderClusters = []">
+                  <span class="mr-2">
+                    {{ orderSpec.orderProduct.orderClusters[0].name }}
+                  </span>
+                  <span class="btn tx-color-second fit">
+                    <i class="material-icons">open_in_new</i>
+                  </span>
+                  <span class="btn tx-color-second fit" @click="removeCluster(orderSpec)">
                     <i class="material-icons">delete_outline</i>
                   </span>
                 </div>
@@ -224,7 +278,8 @@ let labels = {
   'DISPOSAL': '취소',
   'REQUESTED': '요청',
   'PROCEEDING': '진행중',
-  'DONE': '완료'
+  'DONE': '완료',
+  'DINIED': '반려'
 }
 
 let users = {
@@ -256,7 +311,10 @@ export default {
       badges: [],
       filter: {
         type: ['PURCHASE'],
-        status: ['REQUESTED', 'PROCEEDING']
+        status: ['REQUESTED', 'PROCEEDING'],
+        order: {
+          recent: true
+        }
       },
       snack: [],
       autocomplete: {
@@ -274,11 +332,19 @@ export default {
   watch: {
     filter: {
       deep: true,
-      immediate: true,
+      // immediate: true,
       handler () { this.showOrders() }
     }
   },
   methods: {
+    options4Status(val) {
+      if(['DONE', 'DINIED'].indexOf(val) != -1)
+        return []
+
+      let arr = ['REQUESTED', 'PROCEEDING', 'DONE', 'DINIED']
+      let idx = arr.indexOf(val) || 0
+      return this.$_.rest(arr, idx)
+    },
     toLabels (val) {
       return labels[val]
     },
@@ -294,9 +360,11 @@ export default {
           this.badges[0] = items.filter(item => {
             return ['PURCHASE'].indexOf(item.orderType) != -1 && ['REQUESTED', 'PROCEEDING'].indexOf(item.orderStatus) != -1
           }).length
-          this.orders.content.resources = items.filter(item => {
+
+          items = items.filter(item => {
             return type.indexOf(item.orderType) != -1 && status.indexOf(item.orderStatus) != -1
           })
+          this.orders.content.resources = this.filter.order.recent ? items : this.$_.sortBy(items, 'regDate')
         })
     },
     showOrderDtail (name, order) {
@@ -317,11 +385,31 @@ export default {
     bindCluster (spec, cluster) {
       spec.orderProduct.orderClusters = [cluster]
       this.autocomplete.keyword = ''
+
+      //TODO: remove
+      let order = this.orders.content.resources.find(o => o.id == spec.id) || {}
+      order.clusterName = cluster.name
     },
     addCluster (spec, cluster) {
       console.log(cluster)
       this.autocomplete.clusters.push(cluster.name)
       this.$nextTick(() => this.bindCluster(spec, cluster))
+    },
+    removeCluster (spec) {
+      if(confirm('클러스터 정보를 삭제하시겠습니까?')){
+        spec.orderProduct.orderClusters = []
+
+        //TODO: remove
+        let order = this.orders.content.resources.find(o => o.id == spec.id) || {}
+        order.clusterName = ''
+      }
+    },
+    updateStatus (order) {
+      if(confirm('주문 상태를 변경하시겠습니까?')) {
+        //TODO: change order status
+        this.flag.menu = ''
+        this.showOrders()
+      }
     },
     showSnack (msg) {
       this.snack.push(msg)
@@ -330,70 +418,17 @@ export default {
       this.flag.menu = name
 
       // https://www.sitepoint.com/community/t/how-to-position-modal-dialog-at-x-y-coordinates-of-click-event/224882/2
-      // positon popup on page relative to cursor
-      // position at time of click event 
-      var VPWH = [];                  // view port width / height
-      var intVPW, intVPH;             // view port width / height
-      var intCoordX = e.clientX;    
-      var intCoordY = e.clientY;    // distance from click point to view port top
-      var intDistanceScrolledUp = document.body.scrollTop;
-            // distance the page has been scrolled up from view port top
-      var intPopupOffsetTop = intDistanceScrolledUp + intCoordY;
-          // add the two for total distance from click point y to top of page
-
-      var intDistanceScrolledLeft = document.body.scrollLeft;
-      var intPopupOffsetLeft = intDistanceScrolledLeft + intCoordX;
-
-      VPWH = this.getViewPortWidthHeight();    // view port Width/Height
-      intVPW = VPWH[0];
-      intVPH = VPWH[1];
-
       var popup = {style: {}}
       popup.style.position = 'absolute';
-              // if not display: block, .offsetWidth & .offsetHeight === 0
       popup.style.display = 'block';
       popup.style.zIndex = '10100';
-
-      if ( intCoordX > intVPW/2 ) { intPopupOffsetLeft -= popup.offsetWidth; }
-            // if x is in the right half of the viewport, pull popup left by its width
-      if ( intCoordY > intVPH/2 ) { intPopupOffsetTop -= popup.offsetHeight; }
-          // if y is in the bottom half of view port, pull popup up by its height
-
-      // popup.style.top = intPopupOffsetTop + 'px';
-      // popup.style.left = intPopupOffsetLeft + 'px';
 
       popup.style.top = e.pageY + 'px';
       popup.style.left = e.pageX + 'px';
 
       this.dialog.style = popup.style
       this.dialog.order = order
-    },
-    getViewPortWidthHeight() {
-      // https://stackoverflow.com/a/2035211
-      var viewPortWidth;
-      var viewPortHeight;
-
-      // the more standards compliant browsers (mozilla/netscape/opera/IE7) use window.innerWidth and window.innerHeight
-      if (typeof window.innerWidth != 'undefined') {
-        viewPortWidth = window.innerWidth,
-        viewPortHeight = window.innerHeight
-      }
-
-      // IE6 in standards compliant mode (i.e. with a valid doctype as the first line in the document)
-      else if (typeof document.documentElement != 'undefined'
-      && typeof document.documentElement.clientWidth !=
-      'undefined' && document.documentElement.clientWidth != 0) {
-          viewPortWidth = document.documentElement.clientWidth,
-          viewPortHeight = document.documentElement.clientHeight
-      }
-
-      // older versions of IE
-      else {
-        viewPortWidth = document.getElementsByTagName('body')[0].clientWidth,
-        viewPortHeight = document.getElementsByTagName('body')[0].clientHeight
-      }
-      return [viewPortWidth, viewPortHeight];
-      }
+    }
   },
   mounted () {
     this.showOrders()
@@ -414,21 +449,23 @@ export default {
 <style>
 .tx-size-primary { @apply text-sm }
 .tx-size-second { @apply text-xs }
-.tx-color-primary { @apply text-gray-900 }
+.tx-color-primary { color: #202124 }
 .tx-color-second { @apply text-gray-600 }
 .tx-primary { @apply tx-size-primary tx-color-primary }
 .tx-second { @apply tx-size-second tx-color-second }
 
 .product-table { @apply bg-white w-full }
+.product-table tr:hover { @apply bg-gray-300 }
 .product-table td { @apply border-gray-200 border-b py-2 px-3 }
-.product-table .status { @apply w-20 tx-size-second }
-.product-table .user { @apply w-20 tx-size-second }
+.product-table .status { @apply w-24 tx-size-primary pr-0 }
+.product-table .status i { @apply tx-size-primary align-middle }
+.product-table .user { @apply w-24 tx-size-primary }
 .product-table .title { @apply pl-5 }
 
 .product-table .disabled { @apply bg-gray-200 }
 
 .tab { @apply flex border-gray-200 border-t border-b }
-.tab > * { @apply inline-block p-3 w-1/5 }
+.tab > * { @apply block p-3 w-40 !important }
 .tab > *:hover { @apply bg-gray-200 }
 .tab .active { @apply text-blue-600 border-blue-600 border-b-2 }
 
@@ -437,13 +474,14 @@ export default {
 /* .page span:not(:first-child) { @apply ml-3 } */
 .page .btn { @apply ml-3 }
 .page .spacer { @apply flex-grow mx-auto }
-
 .btn { @apply px-3 m-0 pb-1 !important inline-block; }
 .btn i { @apply align-middle text-lg; }
 .btn:hover {
   @apply cursor-pointer bg-gray-700 rounded-full opacity-25;
   @apply text-white;
 }
+
+.btn.fit { @apply px-0 }
 
 .btn.disabled { @apply text-gray-400 }
 .btn.disabled:hover {
@@ -454,18 +492,29 @@ export default {
 .shadow-material { box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12) }
 .shadow-material-deep { box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0 11px 15px -7px rgba(0,0,0,0.2) }
 
-.menu { @apply rounded shadow-material absolute mt-1 ml-3 bg-white p-3 }
+.menu { @apply rounded shadow-material absolute mt-1 ml-3 bg-white }
+.menu { @apply flex flex-col !important }
+.menu.row { @apply flex-row !important }
+.menu div { @apply block }
 .menu .item { @apply text-black px-2 py-2 }
+.menu .item.category { @apply mb-3 border-b border-gray-700 }
+
+.menu.wide { @apply py-2 px-0 }
+.menu.wide .item { @apply p-1 px-4 }
+.menu.wide .item:hover { @apply bg-gray-300 }
+.menu.wide .item span { @apply align-bottom }
+.menu.wide .item i { @apply text-lg align-middle }
 /* .menu { @apply rounded shadow-material absolute mt-6 -ml-10 bg-white p-3 } */
 /* .menu ul { @apply p-3 } */
 /* .menu ul li label { @apply text-black px-2 py-2 } */
 .menu .divider { @apply border-t mx-2 border-gray-300 }
+.menu .divider.clear { @apply border-transparent }
 
 .product-table .menu { @apply -ml-2 mt-1 }
 .clickable:hover { @apply cursor-pointer }
 
-.dialog { @apply rounded shadow-material-deep absolute mt-1 bg-white p-6 }
-.dialog .action { @apply flex justify-end mb-1 text-gray-600 -mr-4 -mt-1 text-sm }
+.dialog { @apply rounded shadow-material-deep absolute mt-1 bg-white py-6 px-8 }
+.dialog .action { @apply flex justify-end text-gray-600 -mr-4 -mt-1 text-sm }
 .dialog .title { @apply text-lg p-0 }
 .dialog .edit input { @apply border-b-2 }
 
@@ -481,8 +530,8 @@ export default {
 .alert .action { @apply inline-block py-3 px-2 mr-4 leading-none }
 
 .badge {
-  @apply bg-red-600 text-white text-xs text-center rounded-lg;
-  @apply w-6 ml-2 mb-1 align-middle;
+  @apply text-white text-xs text-center rounded-lg;
+  @apply w-6 mb-1 align-middle;
   @apply inline-block;
 }
 </style>

@@ -24,7 +24,7 @@ module.exports = {
   css: ['~/assets/css/tailwind.css'],
   build: {
     publicPath: process.env.NUXT_PUBLIC_PATH || "/assets",
-    vendor: ["axios", "babel-polyfill"],
+    vendor: ["axios", "underscore", "babel-polyfill"],
     extractCSS: true,
     postcss: [
       require('tailwindcss')('./tailwind.config.js'),
@@ -57,7 +57,8 @@ module.exports = {
     ]
   },
   plugins: [
-    '~/plugins/moment.js'
+    '~/plugins/moment',
+    '~/plugins/underscore'
   ],
   modules: [
     '@nuxtjs/moment'
