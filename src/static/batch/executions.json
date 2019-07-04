@@ -1,0 +1,212 @@
+{
+  "content": {
+    "count": 21,
+    "resources": [
+      {
+        "jobName": "Billing Batch",
+        "startTime": "2019-06-12 09:52:21",
+        "endTime": "2019-06-12 10:52:21",
+        "jobId": 38,
+        "jobStatus": "FAILED",
+        "jobParameters": {"datetime":"201906040000", "user": "zservice", "runUser":"zcp-system" },
+        "runUser": "zservice",
+        "exitMessage": "service.sp.spring.auth.exception.TokenExpiredException: JWT expired at 2018-01-31T18:14:50Z. Current time: 2018-02-05T18:37:51Z, a difference of 433261020 milliseconds. Allowed clock skew: 120000 milliseconds."
+      },
+      {
+        "jobName": "Billing Batch",
+        "startTime": "2019-06-12 09:51:54",
+        "endTime": "2019-06-12 10:52:21",
+        "jobId": 36,
+        "jobStatus": "STARTING",
+        "jobParameters": {"datetime":"201906040000"},
+        "runUser": "zservice",
+        "exitMessage": "-"
+      },
+      {
+        "jobName": "Billing Batch",
+        "startTime": "2019-06-12 09:51:54",
+        "endTime": "2019-06-12 10:52:21",
+        "jobId": 37,
+        "jobStatus": "STARTED",
+        "jobParameters": {"datetime":"201906040000"},
+        "runUser": "zservice",
+        "exitMessage": "-"
+      },
+      {
+        "jobName": "Billing Batch",
+        "startTime": "2019-06-12 09:51:17",
+        "endTime": "2019-06-12 10:52:21",
+        "jobId": 35,
+        "jobStatus": "STOPPING",
+        "jobParameters": {"datetime":"201906040000"},
+        "runUser": "zservice",
+        "exitMessage": "cloudzcp-admin stopping a job"
+      },
+      {
+        "jobName": "Billing Batch",
+        "startTime": "2019-06-12 09:51:16",
+        "endTime": "2019-06-12 10:52:21",
+        "jobId": 34,
+        "jobStatus": "STOPPED",
+        "jobParameters": {"datetime":"201906040000"},
+        "runUser": "zservice",
+        "exitMessage": "Job is stopped by cloudzcp-admin"
+      },
+      {
+        "jobName": "Billing Batch",
+        "startTime": "2019-06-12 09:50:35",
+        "endTime": "2019-06-12 10:52:21",
+        "jobId": 33,
+        "jobStatus": "ABANDONED",
+        "jobParameters": {"datetime":"201906040000"},
+        "runUser": "zservice",
+        "exitMessage": "-"
+      },
+      {
+        "jobName": "Billing Batch",
+        "startTime": "2019-06-12 09:50:08",
+        "endTime": "2019-06-12 10:52:21",
+        "jobId": 32,
+        "jobStatus": "UNKNOWN",
+        "jobParameters": {"datetime":"201906040000"},
+        "runUser": "zservice",
+        "exitMessage": "Please check the job status manually"
+      },
+      {
+        "jobName": "Billing Batch",
+        "startTime": "2019-06-12 09:49:09",
+        "endTime": "2019-06-12 10:52:21",
+        "jobId": 31,
+        "jobStatus": "COMPLETED",
+        "jobParameters": {"datetime":"201906040000"},
+        "runUser": "zservice",
+        "exitMessage": "Handled 6 Users, 8 Clusters, 32 VMs and 51 Storages"
+      },
+      {
+        "jobName": "Billing Batch",
+        "startTime": "2019-06-12 09:47:48",
+        "endTime": "2019-06-12 10:52:21",
+        "jobId": 30,
+        "jobStatus": "COMPLETED",
+        "jobParameters": {"datetime":"201906040000"},
+        "runUser": "zservice",
+        "exitMessage": "Handled 6 Users, 8 Clusters, 32 VMs and 51 Storages"
+      },
+      {
+        "jobName": "Billing Batch",
+        "startTime": "2019-06-12 09:43:38",
+        "endTime": "2019-06-12 10:52:21",
+        "jobId": 29,
+        "jobStatus": "COMPLETED",
+        "jobParameters": {"datetime":"201906040000"},
+        "runUser": "zservice",
+        "exitMessage": "Handled 6 Users, 8 Clusters, 32 VMs and 51 Storages"
+      },
+      {
+        "jobName": "Billing Batch",
+        "startTime": "2019-06-11 17:58:42",
+        "endTime": "2019-06-12 10:52:21",
+        "jobId": 28,
+        "jobStatus": "COMPLETED",
+        "jobParameters": {"datetime":"201906040000"},
+        "runUser": "zservice",
+        "exitMessage": "Handled 6 Users, 8 Clusters, 32 VMs and 51 Storages"
+      },
+      {
+        "jobName": "Billing Batch",
+        "startTime": "2019-06-11 16:31:17",
+        "endTime": "2019-06-12 10:52:21",
+        "jobId": 26,
+        "jobStatus": "COMPLETED",
+        "jobParameters": {"datetime":"201906040000"},
+        "runUser": "zservice",
+        "exitMessage": "Handled 6 Users, 8 Clusters, 32 VMs and 51 Storages"
+      },
+      {
+        "jobName": "Billing Batch",
+        "startTime": "2019-06-11 14:15:25",
+        "endTime": "2019-06-12 10:52:21",
+        "jobId": 24,
+        "jobStatus": "COMPLETED",
+        "jobParameters": {"datetime":"201906040000"},
+        "runUser": "zservice",
+        "exitMessage": "Handled 6 Users, 8 Clusters, 32 VMs and 51 Storages"
+      },
+      {
+        "jobName": "Billing Batch",
+        "startTime": "2019-06-03 10:44:00",
+        "endTime": "2019-06-12 10:52:21",
+        "jobId": 10,
+        "jobStatus": "COMPLETED",
+        "jobParameters": {"datetime":"201906040000"},
+        "runUser": "cloudsvcdev101",
+        "exitMessage": "Handled 6 Users, 8 Clusters, 32 VMs and 51 Storages"
+      },
+      {
+        "jobName": "Billing Batch",
+        "startTime": "2019-05-31 17:42:43",
+        "endTime": "2019-06-12 10:52:21",
+        "jobId": 8,
+        "jobStatus": "COMPLETED",
+        "jobParameters": {"datetime":"201906040000"},
+        "runUser": "zservice",
+        "exitMessage": "Handled 6 Users, 8 Clusters, 32 VMs and 51 Storages"
+      },
+      {
+        "jobName": "Billing Batch",
+        "startTime": "2019-05-31 17:42:43",
+        "endTime": "2019-06-12 10:52:21",
+        "jobId": 9,
+        "jobStatus": "COMPLETED",
+        "jobParameters": {"datetime":"201906040000"},
+        "runUser": "zservice",
+        "exitMessage": "Handled 6 Users, 8 Clusters, 32 VMs and 51 Storages"
+      },
+      {
+        "jobName": "Billing Batch",
+        "startTime": "2019-05-31 17:24:09",
+        "endTime": "2019-06-12 10:52:21",
+        "jobId": 7,
+        "jobStatus": "COMPLETED",
+        "jobParameters": {"datetime":"201906040000"},
+        "runUser": "jooo85",
+        "exitMessage": "Handled 6 Users, 8 Clusters, 32 VMs and 51 Storages"
+      },
+      {
+        "jobName": "Billing Batch",
+        "startTime": "2019-05-27 18:42:55",
+        "endTime": "2019-06-12 10:52:21",
+        "jobId": 6,
+        "jobStatus": "COMPLETED",
+        "jobParameters": {"datetime":"201906040000"},
+        "runUser": "zservice",
+        "exitMessage": "Handled 6 Users, 8 Clusters, 32 VMs and 51 Storages"
+      },
+      {
+        "jobName": "Billing Batch",
+        "startTime": "2019-05-27 18:41:35",
+        "endTime": "2019-06-12 10:52:21",
+        "jobId": 5,
+        "jobStatus": "COMPLETED",
+        "jobParameters": {"datetime":"201906040000"},
+        "runUser": "zservice",
+        "exitMessage": "Handled 6 Users, 8 Clusters, 32 VMs and 51 Storages"
+      },
+      {
+        "jobName": "Billing Batch",
+        "startTime": "2019-05-27 18:40:42",
+        "endTime": "2019-06-12 10:52:21",
+        "jobId": 4,
+        "jobStatus": "COMPLETED",
+        "jobParameters": {"datetime":"201906040000"},
+        "runUser": "zservice",
+        "exitMessage": "Handled 6 Users, 8 Clusters, 32 VMs and 51 Storages"
+      }
+    ]
+  },
+  "search": {},
+  "page": {
+    "offset": 0,
+    "limit": 20
+  }
+}

@@ -12,9 +12,14 @@
         "orderType": "PURCHASE",
         "orderStatus": "REQUESTED",
         "orderUserId": "zservice",
+        "orderUserName": "Z Service",
         "orderCustomerId": "C001139",
+        "orderMasterId": "IBM001139",
+        "orderMasterName": "IBM-1139",
+        "orderCompany": "SK Innovation",
         "productName": "Cloud Z CP (Container Platform)",
-        "productPackageName": "Cloud Z CP Public - Support Plan"
+        "productPackageName": "Cloud Z CP Public - Support Plan",
+        "enable":  false
       },
       {
         "regId": "zservice",
@@ -26,9 +31,14 @@
         "orderType": "PURCHASE",
         "orderStatus": "REQUESTED",
         "orderUserId": "zservice",
+        "orderUserName": "Z Service",
         "orderCustomerId": "C001139",
+        "orderMasterId": "IBM001139",
+        "orderMasterName": "IBM-1139",
+        "orderCompany": "SK Networks",
         "productName": "Cloud Z CP (Container Platform)",
-        "productPackageName": "Cloud Z CP Public - Technical Support"
+        "productPackageName": "Cloud Z CP Public - Technical Support",
+        "enable":  true
       },
       {
         "regId": "zservice",
@@ -40,9 +50,14 @@
         "orderType": "PURCHASE",
         "orderStatus": "REQUESTED",
         "orderUserId": "zservice",
+        "orderUserName": "Z Service",
         "orderCustomerId": "C001139",
+        "orderMasterId": "IBM001139",
+        "orderMasterName": "IBM-1139",
+        "orderCompany": "SK(주)",
         "productName": "Cloud Z CP (Container Platform)",
-        "productPackageName": "Cloud Z CP Public - Technical Support"
+        "productPackageName": "Cloud Z CP Public - Technical Support",
+        "enable":  true
       },
       {
         "regId": "zservice",
@@ -54,9 +69,14 @@
         "orderType": "PURCHASE",
         "orderStatus": "REQUESTED",
         "orderUserId": "zservice",
+        "orderUserName": "Z Service",
         "orderCustomerId": "C001139",
+        "orderMasterId": "IBM001139",
+        "orderMasterName": "IBM-1139",
+        "orderCompany": "SK(주)",
         "productName": "Cloud Z CP (Container Platform)",
-        "productPackageName": "Cloud Z CP Public - Network Proxy"
+        "productPackageName": "Cloud Z CP Public - Network Proxy",
+        "enable":  true
       },
       {
         "regId": "zservice",
@@ -68,9 +88,14 @@
         "orderType": "PURCHASE",
         "orderStatus": "REQUESTED",
         "orderUserId": "zservice",
+        "orderUserName": "Z Service",
         "orderCustomerId": "C001139",
+        "orderMasterId": "IBM001139",
+        "orderMasterName": "IBM-1139",
+        "orderCompany": "SK(주)",
         "productName": "Cloud Z CP (Container Platform)",
-        "productPackageName": "Cloud Z CP Public - Network Proxy"
+        "productPackageName": "Cloud Z CP Public - Network Proxy",
+        "enable":  true
       },
       {
         "regId": "zservice",
@@ -82,9 +107,14 @@
         "orderType": "PURCHASE",
         "orderStatus": "REQUESTED",
         "orderUserId": "zservice",
+        "orderUserName": "Z Service",
         "orderCustomerId": "C001139",
+        "orderMasterId": "IBM001139",
+        "orderMasterName": "IBM-1139",
+        "orderCompany": "SK(주)",
         "productName": "Cloud Z CP (Container Platform)",
-        "productPackageName": "Cloud Z CP Public - Logging (Lite)"
+        "productPackageName": "Cloud Z CP Public - Logging (Lite)",
+        "enable":  true
       },
       {
         "regId": "zservice",
@@ -96,9 +126,14 @@
         "orderType": "PURCHASE",
         "orderStatus": "REQUESTED",
         "orderUserId": "zservice",
+        "orderUserName": "Z Service",
         "orderCustomerId": "C001139",
+        "orderMasterId": "IBM001139",
+        "orderMasterName": "IBM-1139",
+        "orderCompany": "SK(주)",
         "productName": "Cloud Z CP (Container Platform)",
-        "productPackageName": "Cloud Z CP Public - Logging (Standard)"
+        "productPackageName": "Cloud Z CP Public - Logging (Standard)",
+        "enable":  true
       },
       {
         "regId": "zservice",
@@ -110,9 +145,14 @@
         "orderType": "PURCHASE",
         "orderStatus": "REQUESTED",
         "orderUserId": "zservice",
+        "orderUserName": "Z Service",
         "orderCustomerId": "C001139",
+        "orderMasterId": "IBM001139",
+        "orderMasterName": "IBM-1139",
+        "orderCompany": "SK(주)",
         "productName": "Cloud Z CP (Container Platform)",
-        "productPackageName": "Cloud Z CP Public - Add-on Extended Storage"
+        "productPackageName": "Cloud Z CP Public - Add-on Extended Storage",
+        "enable":  true
       },
       {
         "regId": "zservice",
@@ -124,9 +164,14 @@
         "orderType": "PURCHASE",
         "orderStatus": "REQUESTED",
         "orderUserId": "zservice",
+        "orderUserName": "Z Service",
         "orderCustomerId": "C001139",
+        "orderMasterId": "IBM001139",
+        "orderMasterName": "IBM-1139",
+        "orderCompany": "SK(주)",
         "productName": "Cloud Z CP (Container Platform)",
-        "productPackageName": "Cloud Z CP Public - Standard"
+        "productPackageName": "Cloud Z CP Public - Standard",
+        "enable":  true
       },
       {
         "regId": "zservice",
@@ -138,9 +183,14 @@
         "orderType": "PURCHASE",
         "orderStatus": "REQUESTED",
         "orderUserId": "zservice",
+        "orderUserName": "Z Service",
         "orderCustomerId": "C001139",
+        "orderMasterId": "IBM001139",
+        "orderMasterName": "IBM-1139",
+        "orderCompany": "SK(주)",
         "productName": "Cloud Z CP (Container Platform)",
-        "productPackageName": "Cloud Z CP Private - License"
+        "productPackageName": "Cloud Z CP Private - License",
+        "enable":  true
       },
       {
         "regId": "zservice",
@@ -152,9 +202,14 @@
         "orderType": "PURCHASE",
         "orderStatus": "DONE",
         "orderUserId": "zservice",
+        "orderUserName": "Z Service",
         "orderCustomerId": "C001139",
+        "orderMasterId": "IBM001139",
+        "orderMasterName": "IBM-1139",
+        "orderCompany": "SK(주)",
         "productName": "Cloud Z CP (Container Platform)",
-        "productPackageName": "Cloud Z CP Public - Performance Testing"
+        "productPackageName": "Cloud Z CP Public - Performance Testing",
+        "enable":  true
       },
       {
         "regId": "zcpmanager",
@@ -166,9 +221,14 @@
         "orderType": "DISPOSAL",
         "orderStatus": "DONE",
         "orderUserId": "zservice",
+        "orderUserName": "Z Service",
         "orderCustomerId": "C001139",
+        "orderMasterId": "IBM001139",
+        "orderMasterName": "IBM-1139",
+        "orderCompany": "SK(주)",
         "productName": "Cloud Z CP (Container Platform)",
-        "productPackageName": "Cloud Z CP Public - Standard"
+        "productPackageName": "Cloud Z CP Public - Standard",
+        "enable":  true
       },
       {
         "regId": "zservice",
@@ -180,9 +240,14 @@
         "orderType": "PURCHASE",
         "orderStatus": "DONE",
         "orderUserId": "zservice",
+        "orderUserName": "Z Service",
         "orderCustomerId": "C001139",
+        "orderMasterId": "IBM001139",
+        "orderMasterName": "IBM-1139",
+        "orderCompany": "SK(주)",
         "productName": "Cloud Z CP (Container Platform)",
-        "productPackageName": "Cloud Z CP Public - Standard"
+        "productPackageName": "Cloud Z CP Public - Standard",
+        "enable":  true
       },
       {
         "regId": "zservice",
@@ -194,9 +259,14 @@
         "orderType": "PURCHASE",
         "orderStatus": "REQUESTED",
         "orderUserId": "cloudsvcdev101",
+        "orderUserName": "Cloud Z",
         "orderCustomerId": "C001139",
+        "orderMasterId": "IBM001139",
+        "orderMasterName": "IBM-1139",
+        "orderCompany": "SK(주)",
         "productName": "Cloud Z CP (Container Platform)",
-        "productPackageName": "Cloud Z CP 1.0"
+        "productPackageName": "Cloud Z CP 1.0",
+        "enable":  true
       },
       {
         "regId": "zservice",
@@ -208,9 +278,14 @@
         "orderType": "PURCHASE",
         "orderStatus": "DONE",
         "orderUserId": "zservice",
+        "orderUserName": "Z Service",
         "orderCustomerId": "C001139",
+        "orderMasterId": "IBM001139",
+        "orderMasterName": "IBM-1139",
+        "orderCompany": "SK(주)",
         "productName": "Cloud Z CP (Container Platform)",
-        "productPackageName": "Cloud Z CP Public - Performance Testing"
+        "productPackageName": "Cloud Z CP Public - Performance Testing",
+        "enable":  true
       },
       {
         "regId": "zservice",
@@ -222,9 +297,14 @@
         "orderType": "PURCHASE",
         "orderStatus": "DONE",
         "orderUserId": "zservice",
+        "orderUserName": "Z Service",
         "orderCustomerId": "C001139",
+        "orderMasterId": "IBM001139",
+        "orderMasterName": "IBM-1139",
+        "orderCompany": "SK(주)",
         "productName": "Cloud Z CP (Container Platform)",
-        "productPackageName": "Cloud Z CP Public - Performance Testing"
+        "productPackageName": "Cloud Z CP Public - Performance Testing",
+        "enable":  true
       },
       {
         "regId": "jooo85",
@@ -236,9 +316,13 @@
         "orderType": "PURCHASE",
         "orderStatus": "REQUESTED",
         "orderUserId": "jooo85",
+        "orderUserName": "Z Action",
         "orderCustomerId": "C000003",
+        "orderMasterId": "IBM000003",
+        "orderMasterName": "IBM-0003",
         "productName": "Cloud Z CP (Container Platform)",
-        "productPackageName": "Cloud Z CP Public - Lite"
+        "productPackageName": "Cloud Z CP Public - Lite",
+        "enable":  true
       },
       {
         "regId": "zservice",
@@ -250,9 +334,14 @@
         "orderType": "PURCHASE",
         "orderStatus": "DONE",
         "orderUserId": "zservice",
+        "orderUserName": "Z Service",
         "orderCustomerId": "C001139",
+        "orderMasterId": "IBM001139",
+        "orderMasterName": "IBM-1139",
+        "orderCompany": "SK(주)",
         "productName": "Cloud Z CP (Container Platform)",
-        "productPackageName": "Cloud Z CP Public - Support Plan"
+        "productPackageName": "Cloud Z CP Public - Support Plan",
+        "enable":  true
       },
       {
         "regId": "zservice",
@@ -264,9 +353,14 @@
         "orderType": "PURCHASE",
         "orderStatus": "PROCEEDING",
         "orderUserId": "zservice",
+        "orderUserName": "Z Service",
         "orderCustomerId": "C001139",
+        "orderMasterId": "IBM001139",
+        "orderMasterName": "IBM-1139",
+        "orderCompany": "SK(주)",
         "productName": "Cloud Z CP (Container Platform)",
-        "productPackageName": "Cloud Z CP Public - Logging (Standard)"
+        "productPackageName": "Cloud Z CP Public - Logging (Standard)",
+        "enable":  true
       },
       {
         "regId": "zservice",
@@ -278,7 +372,11 @@
         "orderType": "PURCHASE",
         "orderStatus": "REQUESTED",
         "orderUserId": "zservice",
+        "orderUserName": "Z Service",
         "orderCustomerId": "C001139",
+        "orderMasterId": "IBM001139",
+        "orderMasterName": "IBM-1139",
+        "orderCompany": "SK(주)",
         "productName": "Cloud Z CP (Container Platform)",
         "productPackageName": "Cloud Z CP Public - Lite"
       }

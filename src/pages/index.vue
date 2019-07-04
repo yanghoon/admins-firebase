@@ -152,10 +152,33 @@
         </tr>
 
         <tr v-for="(order, idx) in orders.content.resources" :key="idx"
-            :class="{disabled: order.orderStatus == 'DONE'}">
-          <td class="status clickable" @click.stop="showDialog($event, 'dialog-' + idx, order)">
-            {{ order.orderType | labels('ORDER') }} {{ order.orderStatus | labels('ORDER') }}
-            <i class="material-icons">keyboard_arrow_down</i>
+            :class="{disabled: order.orderStatus == 'DONE' || !order.enable}">
+          <td style="padding-right: 0px; padding-bottom: 0px">
+            <div class="cursor-pointer" :class="order.enable ? 'text-yellow-500': 'text-gray-400'"
+                @click="updateEnable(order)">
+              <!-- <i class="material-icons">{{ order.enable ? 'bookmark' : 'bookmark_border'}}</i> -->
+              <i class="material-icons">{{ 'bookmark_border'}}</i>
+            </div>
+          </td>
+          <!-- <td style="padding-right: 0px; padding-bottom: 0px">
+            <div class="cursor-pointer" :class="order.enable ? 'text-yellow-500': 'text-gray-400'"
+                @click="updateEnable(order)">
+              <i class="material-icons" v-if="order.enable">label</i>
+              <i class="material-icons-outlined" v-else>label_off</i>
+            </div>
+          </td> -->
+          <!-- <td style="padding-right: 0px; padding-bottom: 0px">
+            <span class="cursor-pointer" :class="order.enable ? 'text-yellow-500': 'text-gray-400'"
+                @click="updateEnable(order)">
+              <i class="material-icons-outlined">{{ order.enable ? 'label' : 'label_off'}}</i>
+            </span>
+          </td> -->
+
+          <td class="status clickable">
+            <span @click.stop="showDialog($event, 'dialog-' + idx, order)">
+              {{ order.orderType | labels('ORDER') }} {{ order.orderStatus | labels('ORDER') }}
+              <i class="material-icons">keyboard_arrow_down</i>
+            </span>
 
             <ul v-if="flag.menu == 'dialog-' + idx" class="menu wide" @click.stop="">
               <template v-for="(status, idx) in options4Status(order.orderStatus)">
@@ -171,14 +194,25 @@
           </td>
 
           <td class="user">
-            {{ order.orderUserId || order.orderCustomerId | labels('USER') }}
+            <span>{{ order.orderUserName || order.orderCustomerId || '-'}}</span>
           </td>
+
+          <td>
+            <span class="tx-second">{{ order.orderCompany || '-' }}, {{ order.orderMasterName || order.orderMasterId || '-' }}</span>
+          </td>
+          
+          <!-- <td>
+            <span class="cursor-pointer" :class="order.enable ? 'text-yellow-500': 'text-gray-400'"
+                @click="updateEnable(order)">
+              <i class="material-icons">{{ order.enable ? 'bookmark' : 'bookmark_border'}}</i>
+            </span>
+          </td> -->
 
           <td class="title clickable" @click.stop="showOrderDtail('dialog-2-' + idx, order)">
             <span class="">{{ order.productPackageName }}</span>
             <div class="badge bg-yellow-500" v-if="!order.clusterName">!</div>
             -
-            <span class="tx-second">{{ `#${order.orderId}` }}</span>
+            <span class="tx-second">{{ $_.compact([`#${order.orderId}`, order.clusterName]).join(', ') }}</span>
 
             <div v-if="flag.menu == 'dialog-2-' + idx" class="dialog" @click.stop="">
               <div class="action">
@@ -349,7 +383,7 @@ export default {
       return labels[val]
     },
     showOrders () {
-      axios.get('/orders.json')
+      axios.get('/billing/orders.json')
         .then(res => {
           this.orders = res.data
           if(!this.orders.content.resources) return
@@ -370,7 +404,7 @@ export default {
     showOrderDtail (name, order) {
       this.flag.menu = ''
       this.orderSpec = { orderProduct: {}, orderPackageCategories: [] }
-      axios.get(`/order-${order.id}-${order.orderId}.json`)
+      axios.get(`/billing/order-${order.id}-${order.orderId}.json`)
         .then(res => {
           this.orderSpec = res.data
           this.flag.menu = name
@@ -409,6 +443,11 @@ export default {
         //TODO: change order status
         this.flag.menu = ''
         this.showOrders()
+      }
+    },
+    updateEnable (order) {
+      if(confirm(`${order.enable ? '비활성화' : '활성화'} 하시겠습니까?`)) {
+        order.enable = !order.enable
       }
     },
     showSnack (msg) {
@@ -456,11 +495,11 @@ export default {
 
 .product-table { @apply bg-white w-full }
 .product-table tr:hover { @apply bg-gray-300 }
-.product-table td { @apply border-gray-200 border-b py-2 px-3 }
-.product-table .status { @apply w-24 tx-size-primary pr-0 }
+.product-table td { @apply border-gray-200 border-b py-2 px-3 whitespace-no-wrap }
+.product-table .status { @apply tx-size-primary pr-0 }
 .product-table .status i { @apply tx-size-primary align-middle }
-.product-table .user { @apply w-24 tx-size-primary }
-.product-table .title { @apply pl-5 }
+.product-table .user { @apply tx-size-primary }
+.product-table .title { @apply pl-5 w-full }
 
 .product-table .disabled { @apply bg-gray-200 }
 
